@@ -1,38 +1,35 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg) ![](../../workflows/fpga/badge.svg)
+#Note
 
-# Tiny Tapeout Wokwi Project Template
+Due to limitations in the debugging capacity of Wokwi, an error persists upon running the gds runtime wherein the system insists that ther are undriven connections. This issue is entirely contained to the linter which insists certain wire nets are undriven, which cannot be rectified as wokwi wire nets are unnumbered so the flagged error message is meaningless. However, everything else functions exactly as it is supposed to, so this problem can safely be ignored.
 
-- [Read the documentation for project](docs/info.md)
+#About
 
-## What is Tiny Tapeout?
+This is an signal redundancy system.
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+The two switches on the left, by the 
+"Input Signal" text control the two bits
+of data actually being transmitted, and you
+can chech their state by the LED indicators
+by the input green for bit 0 and blue for
+bit 1.
 
-To learn more and get started, visit https://tinytapeout.com.
+The set of 6 switches at the top (the component has
+8 but only 1-6 are used) controls
+which of the intermediary wires face
+distortion, which in this case is 
+simulated by having that signal invert.
+For these, off means no distortion on the
+line and on means distortion on the line.
 
-## Wokwi Projects
+The signals then go into the logic system by
+the text "Signal Recombination Logic" which
+is able to correct for some distortion.
 
-Edit the [info.yaml](info.yaml) and change the `wokwi_id` to the ID of your Wokwi project. You can find the ID in the URL of your project, it's the big number after `wokwi.com/projects/`.
+The resulting signal is then sent to the
+two indicator LEDs by the text "Final
+Received Signals" which are again green and 
+blue.
 
-The GitHub action will automatically fetch the digital netlist from Wokwi and build the ASIC files.
-
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
+the system can handle one line out of three
+interfered with at a time without losing
+signal integrity.

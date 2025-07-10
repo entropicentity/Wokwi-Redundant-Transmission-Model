@@ -1,10 +1,10 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
   wokwi_id:     435915547714110465       # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title:        "test"      # Project title
-  author:       "me"      # Your name
+  title:        "Redundant Transmission Model"      # Project title
+  author:       "Alexander Singer"      # Your name
   discord:      "entropicentity"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "file"      # One line description of what your project does
+  description:  "splits signals then recombines them for bit integritu even when one line faces inversion"      # One line description of what your project does
   language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -18,12 +18,12 @@ pinout:
   # Inputs
   ui[0]: "input0"
   ui[1]: "input1"
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[2]: "inversion 0a"
+  ui[3]: "inversion 0b"
+  ui[4]: "inversion 0c"
+  ui[5]: "inversion 1a"
+  ui[6]: "inversion 1b"
+  ui[7]: "inversion 1c"
 
   # Outputs
   uo[0]: "output0"
